@@ -159,7 +159,7 @@ function Salary() {
                                     color: selectedButton === 'myButton2' ? 'white' : 'initial'
                                 }}>월급</button>
                             </span>
-                            
+
                         </div>
                         <div className="form_field_4" >
                             <span class="spin_button number_4">
@@ -172,7 +172,7 @@ function Salary() {
                                     backgroundColor: selectedButton2 === 'myButton3' ? 'black' : 'initial',
                                     color: selectedButton2 === 'myButton3' ? 'white' : 'initial'
                                 }}>별도</button>
-                               
+
                             </span>
                         </div>
                         <div className="form_field_5">

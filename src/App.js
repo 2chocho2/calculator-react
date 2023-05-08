@@ -11,9 +11,8 @@ function App() {
 
   return (
     <>
-     
-    <Route path="/HoliCal" component={Holi} />
-    <Route path="/Salary"  component={Salary} />
+      <Route path="/HoliCal" component={Holi} />
+      <Route path="/Salary" component={Salary} />
     </>
   );
 }
