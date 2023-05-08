@@ -1,0 +1,198 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+.jejugothic * { 
+ font-family: 'Jeju Gothic', sans-serif;
+}
+
+
+
+
+/* ----------------------- 연차 / 연봉 토글 버튼 ----------------------- */
+
+
+
+.holi_salary_btn, .holi_holi_btn {
+  margin-bottom: 100px;
+  margin-top: 100px;
+  width: 90px;
+  height: 50px;
+  font-family: 'Jeju Gothic', sans-serif;
+  background-color: #D9D9D9;
+  font-size: 20px;
+}
+.holi_salary_btn {
+  margin-left: 45.4%;
+}
+
+/* :active 및 :focus 상태에 대한 스타일 */
+.toggle_button_container>button:active,
+.toggle_button_container>button:focus {
+  background-color: black;
+  color: white;
+}
+/* ----------------------- 연차 / 연봉 토글 버튼 end ----------------------- */
+
+
+
+
+/* 윗칸 */
+.holical {
+    height: 300px;
+    width: auto;
+}
+.join_date, .worked_date {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+.join_date_text, .worked_date_text {
+  float: left;
+}
+.join_date_text {
+  margin-left: 30%;
+}
+.worked_date_text {
+  margin-left: 35%;
+}
+
+
+
+/* 연도-월-일 input 값 */
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button { 
+    display: none;
+} 
+
+.calender::-webkit-clear-button, .calender::-webkit-inner-spin-button {
+    display:inline-block;
+}
+.calender {
+    float: left;
+    /* left: 200px; */
+    font-family: 'Jeju Gothic', sans-serif;
+    margin-left: 450px;
+    display: flex;
+    width: 300px;
+    height: 50px;
+    border: black solid 3px;
+    padding: 0 15px;
+    background: transparent;
+    background: url('./img/calender.png')
+    no-repeat center right / 3rem auto;
+
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+    opacity: 0;
+    z-index: 1;
+    width: 3rem;
+    height: 3rem;
+    margin-left: 130px;
+    cursor: pointer;
+  }
+  input:focus{
+    border: 4px solid black;
+  }
+
+  input.label,
+  input:valid ~ label{
+    top: 300px;
+    left: 460px;
+    font-size: 16px;
+    padding: 0 2px;
+    background: white;
+    font-family: 'Jeju Gothic', sans-serif;
+  }
+
+
+  
+.holical > label {
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    color: black;
+    font-size: 19px;
+    pointer-events: none;
+
+
+}
+
+.calender_2 {
+    float: right;
+    margin-right: 410px;
+    /* margin-top: -505px; */
+    display: flex;
+    width: 300px;
+    height: 50px;
+    font-family: 'Jeju Gothic', sans-serif;
+    border: black solid 3px;
+    background: url("./img/calender_2.png")
+    no-repeat center right / 3rem auto;
+    
+}
+
+.holical > span {
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    color: black;
+    font-size: 19px;
+    pointer-events: none;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+  input:focus ~ span,
+  input:valid ~ span{
+    top: 300px;
+    left: 1220px;
+    font-size: 16px;
+    padding: 0 2px;
+    background: white;
+  }
+
+/* 계산하기 */
+.cal-btn_2 {
+    width: 550px;
+    height: 50px;
+    align-items: center;
+    border: #0000FF solid 3px;
+    background-color: #0000FF;
+    color: white;
+    float: left;
+    margin-left: 700px;
+    margin-top: 100px;
+    justify-content: center;
+    display: flex;
+    font-family: 'Jeju Gothic', sans-serif;
+    font-size: 25px;
+    /* align-items: center; */
+}
+
+/* 결과값 */
+.holiresult {
+    text-align: center;
+    vertical-align:text-bottom;
+    font-size: larger;
+    background-color: #0000FF;
+    /* margin-top: -5px; */
+    height: 450px;
+    color: white;
+    padding: 90px;
+}
+
+.holiresult > ul {
+  margin-top: 5px;
+  width: 100%;
+  font-size: 50px;
+  font-family: 'Jeju Gothic', sans-serif;
+}
+
+.holiresult > ul > li {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  font-size: 20px;
+  font-family: 'Jeju Gothic', sans-serif;
+}
