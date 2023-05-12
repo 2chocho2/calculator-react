@@ -15,8 +15,8 @@ RUN     git  clone $GIT_REPOSITORY_ADDRESS
 RUN     mv   ./calculator-react/* .
 RUN     echo REACT_APP_IP=$REST_API_SERVER_IP > .env
 RUN     echo REACT_APP_PORT=$REST_API_SERVER_PORT >> .env
-RUN     npm install
-RUN     npm run build
+RUN     npm run --silent install
+RUN     npm run --silent build
 
 FROM    nginx AS runtime
 COPY    --from=builder /my-app/build/ /usr/share/nginx/html/
