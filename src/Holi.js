@@ -81,7 +81,7 @@ function Holi() {
             <p className="worked_date_text">근무 일수</p>
           </div>
           <div className="join_date">
-            <input type="date" className="calender" onChange={handlerChange} value={nowTime} placeholder="입사일" />
+            <input type="date" className="calender" onChange={handlerChange} placeholder="입사일" />
           </div>
           <div className="worked_date">
             <input type="text" className="calender_2" placeholder="근무일수" readOnly value={workDay} />
