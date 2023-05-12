@@ -10,7 +10,6 @@ function Holi() {
   const [nowTime, setNowTime] = useState(Date.now())
   const [startDate, setStartDate] = useState(nowTime);
   const [result, setResult] = useState({});
-
   const [workDay, setWorkDay] = useState('');
 
   const handlerChange = e => {
@@ -20,12 +19,8 @@ function Holi() {
   const handlerClick = () => {
     axios.get(`http://${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/calcurate/${startDate}`)
       .then(response => {
-        console.log(response.data);
         setResult(response.data);
-
-        console.log(response.data.data.work_day)
         setWorkDay(response.data.data.work_day);
-
       })
       .catch(error => console.log(error));
   };
@@ -49,7 +44,6 @@ function Holi() {
     }
   };
 
-
   return (
     <>
       <div className="holi_container">
@@ -58,41 +52,58 @@ function Holi() {
           <img className="circle" src={calimg}></img>
           <h2 className="title">연봉 연차 계산기</h2>
         </div>
+
         <div class="toggle_button_container">
-          <button className="holi_salary_btn" id="myButton1" onClick={() => handleClick('myButton1')}
+          <button className="holi_salary_btn"
+            id="myButton1"
+            onClick={() => handleClick('myButton1')}
             style={{
               backgroundColor: selectedButton === 'myButton1' ? 'black' : 'initial',
               color: selectedButton === 'myButton1' ? 'white' : 'initial'
-            }}
-          >연차</button>
-          <button className="holi_holi_btn" id="myButton2" onClick={() => handleClick('myButton2')}
+            }}>
+            연차
+          </button>
+
+          <button className="holi_holi_btn"
+            id="myButton2"
+            onClick={() => handleClick('myButton2')}
             style={{
               backgroundColor: selectedButton === 'myButton2' ? 'black' : 'initial',
               color: selectedButton === 'myButton2' ? 'white' : 'initial'
-            }}
-          >연봉</button>
+            }}>
+            연봉
+          </button>
         </div>
         {/* ---------------- 공통 타이틀 end ---------------- */}
-
 
         <div className="holical">
           <div>
             <p className="join_date_text">입사일</p>
             <p className="worked_date_text">근무 일수</p>
           </div>
+
           <div className="join_date">
-            <input type="date" className="calender" onChange={handlerChange} placeholder="입사일" />
+            <input type="date"
+              className="calender"
+              onChange={handlerChange}
+              placeholder="입사일" />
           </div>
+
           <div className="worked_date">
-            <input type="text" className="calender_2" placeholder="근무일수" readOnly value={workDay} />
+            <input type="text"
+              className="calender_2"
+              placeholder="근무일수"
+              readOnly
+              value={workDay} />
           </div>
-          <button onClick={handlerClick} className="cal-btn_2">계산하기</button>
+
+          <button onClick={handlerClick}
+                  className="cal-btn_2">계산하기</button>
         </div>
 
         <div className="holiresult">
           {result && result.data &&
             <ul>
-              {/* <li>근무일수: { result.data.work_day}일</li> */}
               <Moment format={"yyyy/MM/DD"} className={'moment-box'}>{nowTime}</Moment> 기준으로 <br />
               총 연차일수는  {result.data.holi_day}일 입니다.
               <li>본 연봉계산기는 가장 범용적인 기준으로 만들었으나, 연봉 지급 조건과 상황에 따라 약간의 오차가 발생할 수 있으니 참고용으로 활용하시기 바랍니다.<br />

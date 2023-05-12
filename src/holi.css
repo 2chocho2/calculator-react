@@ -5,11 +5,7 @@
 }
 
 
-
-
 /* ----------------------- 연차 / 연봉 토글 버튼 ----------------------- */
-
-
 
 .holi_salary_btn, .holi_holi_btn {
   margin-bottom: 100px;
@@ -33,8 +29,6 @@
 /* ----------------------- 연차 / 연봉 토글 버튼 end ----------------------- */
 
 
-
-
 /* 윗칸 */
 .holical {
     height: 300px;
@@ -54,8 +48,6 @@
 .worked_date_text {
   margin-left: 35%;
 }
-
-
 
 /* 연도-월-일 input 값 */
 input[type="date"]::-webkit-clear-button,
@@ -79,7 +71,6 @@ input[type="date"]::-webkit-inner-spin-button {
     background: transparent;
     background: url('./img/calender.png')
     no-repeat center right / 3rem auto;
-
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator{
@@ -90,6 +81,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     margin-left: 130px;
     cursor: pointer;
   }
+
   input:focus{
     border: 4px solid black;
   }
@@ -103,8 +95,6 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     background: white;
     font-family: 'Jeju Gothic', sans-serif;
   }
-
-
   
 .holical > label {
     position: fixed;
@@ -113,8 +103,6 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     color: black;
     font-size: 19px;
     pointer-events: none;
-
-
 }
 
 .calender_2 {
@@ -128,7 +116,6 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     border: black solid 3px;
     background: url("./img/calender_2.png")
     no-repeat center right / 3rem auto;
-    
 }
 
 .holical > span {

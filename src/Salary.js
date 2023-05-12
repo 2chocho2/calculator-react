@@ -7,13 +7,12 @@ function Salary() {
 
     const [inputPay, setInputPay] = useState('');                       // 연봉
     const [taxFree, setTaxFree] = useState('100000');                   // 비과세액
-    const [dependent, setDependent] = useState(1);                    // 부양가족 수(본인 포함 - 기본 1명)
-    const [underTwenty, setUnderTwenty] = useState(0);                 // 20세 이하 자녀 수
-    const [choosePeriod, setChoosePeriond] = useState('0');              // 급여 기준(연봉/ 월급)
-    const [retirementInclude, setRetirementInclude] = useState('0');     // 퇴직금(별도/ 포함)
+    const [dependent, setDependent] = useState(1);                      // 부양가족 수(본인 포함 - 기본 1명)
+    const [underTwenty, setUnderTwenty] = useState(0);                  // 20세 이하 자녀 수
+    const [choosePeriod, setChoosePeriond] = useState('0');             // 급여 기준(연봉/ 월급)
+    const [retirementInclude, setRetirementInclude] = useState('0');    // 퇴직금(별도/ 포함)
     const [card, setCard] = useState('');                               // 카드값
-
-    const [result, setResult] = useState({});                            // 결과값
+    const [result, setResult] = useState({});                           // 결과값
 
     const handlerChanage = e => {
         setInputPay(e.target.value.replaceAll(",", ""));
@@ -21,23 +20,22 @@ function Salary() {
 
     const onIncrease = () => {
         setDependent(dependent + 1);
-    }
+    };
 
     const onDecrease = () => {
         setDependent(dependent - 1);
-    }
+    };
 
     const onIncreaseTwen = () => {
         setUnderTwenty(underTwenty + 1);
-    }
+    };
 
     const onDecreaseTwen = () => {
         setUnderTwenty(underTwenty - 1);
-    }
-
+    };
 
     //토글
-    const [selectedButton, setSelectedButton] = useState('myButton1'); // 기본값으로 'myButton1' 설정
+    const [selectedButton, setSelectedButton] = useState('myButton1');   // 기본값으로 'myButton1' 설정
     const [selectedButton2, setSelectedButton2] = useState('myButton3'); // 기본값으로 'myButton1' 설정
 
     //급여 기준
@@ -77,7 +75,6 @@ function Salary() {
         }
     };
 
-
     const handlerChangeTax = e => setTaxFree(e.target.value);
     const handlerChangeDependent = e => setDependent(e.target.value);
     const handlerChangeUnderTwenty = e => setUnderTwenty(e.target.value);
@@ -98,7 +95,7 @@ function Salary() {
         let selectedValue;
         if (buttonId === 'myButton5') {
             selectedValue = "/HoliCal"; // 포함 선택한 경우
-            window.location.href = '/HoliCal'
+            window.location.href = '/'
         } else {
             selectedValue = "/Salary";
             window.location.href = '/Salary'; // 별도 선택한 경우
@@ -120,65 +117,113 @@ function Salary() {
                         <img className="circle" src={calimg}></img>
                         <h2 className="title">연봉 연차 계산기</h2>
                     </div>
-                    <button className="salary_salary_btn" id="myButton5" onClick={() => handleClick2('myButton5')}
-                        style={{
-                            backgroundColor: selectedButton5 === 'myButton5' ? 'black' : 'initial',
-                            color: selectedButton5 === 'myButton5' ? 'white' : 'initial'
-                        }}
-                    >연차</button>
+                    
+                    <button className="salary_salary_btn"
+                            id="myButton5"
+                            onClick={() => handleClick2('myButton5')}
+                            style={{
+                                backgroundColor: selectedButton5 === 'myButton5' ? 'black' : 'initial',
+                                color: selectedButton5 === 'myButton5' ? 'white' : 'initial'
+                            }}>
+                        연차
+                    </button>
+
                     <div className="paycheck-box">
                         연봉
-                        <input type="text" value={inputPay} onChange={handlerChanage} placeholder="연봉" />
+                        <input type="text" 
+                                value={inputPay} 
+                                onChange={handlerChanage} 
+                                placeholder="연봉" />
                         비과세액
-                        <input type="text" value={taxFree} onChange={handlerChangeTax} placeholder="비과세액" />
+                        
+                        <input type="text" 
+                                value={taxFree} 
+                                onChange={handlerChangeTax} 
+                                placeholder="비과세액" />
+                        
                         <div className="form_field">
                             <span class="spin_button number">
                                 부양가족 수 <br />
-                                <button type="button" onClick={onDecrease} class="minus" id="dependent_btn">▼</button>
-                                <input type="text" id="dependent" value={dependent} maxLength="2" onChange={handlerChangeDependent} />
-                                <button type="button" onClick={onIncrease} class="plus" id="dependent_btn">▲</button>
+                                <button type="button" 
+                                        onClick={onDecrease} 
+                                        class="minus" 
+                                        id="dependent_btn">▼</button>
+                                <input type="text" 
+                                        id="dependent" 
+                                        value={dependent} 
+                                        maxLength="2" 
+                                        onChange={handlerChangeDependent} />
+                                <button type="button" 
+                                        onClick={onIncrease} 
+                                        class="plus" 
+                                        id="dependent_btn">▲</button>
                             </span>
                         </div>
+                        
                         <div className="form_field_2">
                             <span class="spin_button number_2">
                                 20세 이하 자녀 수  <br />
-                                <button type="button" onClick={onIncreaseTwen} class="plus" id="dependent_btn">▲</button>
-                                <input type="text" id="dependent" value={underTwenty} maxLength="2" onChange={handlerChangeUnderTwenty} />
-                                <button type="button" onClick={onDecreaseTwen} class="minus" id="dependent_btn">▼</button>
+                                <button type="button" 
+                                        onClick={onIncreaseTwen} 
+                                        class="plus" 
+                                        id="dependent_btn">▲</button>
+                                <input type="text" 
+                                        id="dependent" 
+                                        value={underTwenty} 
+                                        maxLength="2" 
+                                        onChange={handlerChangeUnderTwenty} />
+                                <button type="button" 
+                                        onClick={onDecreaseTwen} 
+                                        class="minus" 
+                                        id="dependent_btn">▼</button>
                             </span>
                         </div>
+                        
                         <div className="form_field_3">
                             <span class="spin_button number_3">
                                 급여 기준 <br />
-                                <button id="myButton1" onClick={() => handleButtonClick('myButton1')} style={{
-                                    backgroundColor: selectedButton === 'myButton1' ? 'black' : 'initial',
-                                    color: selectedButton === 'myButton1' ? 'white' : 'initial'
+                                <button id="myButton1" 
+                                        onClick={() => handleButtonClick('myButton1')} 
+                                        style={{
+                                            backgroundColor: selectedButton === 'myButton1' ? 'black' : 'initial',
+                                            color: selectedButton === 'myButton1' ? 'white' : 'initial'
                                 }}>연봉</button>
-                                <button id="myButton2" onClick={() => handleButtonClick('myButton2')} style={{
-                                    backgroundColor: selectedButton === 'myButton2' ? 'black' : 'initial',
-                                    color: selectedButton === 'myButton2' ? 'white' : 'initial'
+                                <button id="myButton2" 
+                                        onClick={() => handleButtonClick('myButton2')} 
+                                        style={{
+                                            backgroundColor: selectedButton === 'myButton2' ? 'black' : 'initial',
+                                            color: selectedButton === 'myButton2' ? 'white' : 'initial'
                                 }}>월급</button>
                             </span>
-
                         </div>
+                        
                         <div className="form_field_4" >
                             <span class="spin_button number_4">
                                 퇴직금 <br />
-                                <button id="myButton4" onClick={() => handleButtonClick2('myButton4')} style={{
-                                    backgroundColor: selectedButton2 === 'myButton4' ? 'black' : 'initial',
-                                    color: selectedButton2 === 'myButton4' ? 'white' : 'initial'
+                                <button id="myButton4" 
+                                        onClick={() => handleButtonClick2('myButton4')} 
+                                        style={{
+                                            backgroundColor: selectedButton2 === 'myButton4' ? 'black' : 'initial',
+                                            color: selectedButton2 === 'myButton4' ? 'white' : 'initial'
                                 }}>포함</button>
-                                <button id="myButton3" onClick={() => handleButtonClick2('myButton3')} style={{
-                                    backgroundColor: selectedButton2 === 'myButton3' ? 'black' : 'initial',
-                                    color: selectedButton2 === 'myButton3' ? 'white' : 'initial'
+                                <button id="myButton3" 
+                                        onClick={() => handleButtonClick2('myButton3')} 
+                                        style={{
+                                            backgroundColor: selectedButton2 === 'myButton3' ? 'black' : 'initial',
+                                            color: selectedButton2 === 'myButton3' ? 'white' : 'initial'
                                 }}>별도</button>
-
                             </span>
                         </div>
+                        
                         <div className="form_field_5">
-                            카드값 <input type="text" value={card} onChange={handlerChangeCard} placeholder="카드값" />
+                            카드값 <input type="text" 
+                                        value={card} 
+                                        onChange={handlerChangeCard} 
+                                        placeholder="카드값" />
                         </div>
-                        <button className="cal-btn" onClick={handlerClick}>계산하기</button>
+                        
+                        <button className="cal-btn" 
+                        onClick={handlerClick}>계산하기</button>
                     </div>
                 </div>
 
