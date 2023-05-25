@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Holi from './Holi';
 import { Route } from 'react-router-dom/cjs/react-router-dom.min';
