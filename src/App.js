@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      <Route path="/" component={Holi} />
-      <Route path="/Salary" component={Salary} />
+      <Route path="/" component={Holi} exact={true}/>
+      <Route path="/Salary" component={Salary} exact={true}/>
     </>
   );
 }

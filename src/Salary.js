@@ -108,7 +108,6 @@ function Salary() {
         axios
             .get(`http://${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/api/salaryCal/${inputPay}/${taxFree}/${dependent}/${underTwenty}/${choosePeriod}/${retirementInclude}`)
             .then((response) => {
-                console.log(response.data);
                 setResult(response.data);
             })
             .catch((error) => console.log(error));
